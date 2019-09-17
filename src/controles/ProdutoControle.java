@@ -8,7 +8,8 @@ import modelos.Produto;
 public class ProdutoControle {
 	
 	private static ArrayList<Produto> listaProduto = new ArrayList<Produto>();
-	
+    //private static Object[] options = { "Kg", "Litro");
+    private static ArrayList<Produto> listaProdutoTemp = new ArrayList<Produto>();
 	ProdutoApresentacao produtoApresentacao = new ProdutoApresentacao();
 
 	
