@@ -7,23 +7,21 @@ import modelos.Produto;
 
 public class ProdutoControle {
 	
-	private static ArrayList<Produto> listaProduto = new ArrayList<Produto>();
-    //private static Object[] options = { "Kg", "Litro");
-    private static ArrayList<Produto> listaProdutoTemp = new ArrayList<Produto>();
-	ProdutoApresentacao produtoApresentacao = new ProdutoApresentacao();
-
+	static ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
+    public static  String[] options = { "Kg", "Litro"};
+    
 	
 	public static void adicionaProduto () {
 		Produto produto = new Produto();
-		ProdutoApresentacao.cadastraProduto(produto);
-		listaProduto.add(produto);
+		ProdutoApresentacao.cadastraProduto(produto, options);
+		listaProdutos.add(produto);
 	}
 	public static void listaProduto(){
 		String listaNomeProdutoTemporaria = "";
-		int n = listaProduto.size(); 
+		int n = listaProdutos.size(); 
 		for(int i =0; i<n; i++){
 			listaNomeProdutoTemporaria+= Integer.toString(i)+ " - " +
-					listaProduto.get(i).getNome()+"    "+ listaProduto.get(i).getUnidadeMedida() +" "+ listaProduto.get(i).getValor() + "\n";
+					listaProdutos.get(i).getNome()+"  =  "+ listaProdutos.get(i).getValor() +" /  "+ listaProdutos.get(i).getUnidadeMedida() + "\n\n";
 		}
 		ProdutoApresentacao.listaProduto(listaNomeProdutoTemporaria);
 	}
