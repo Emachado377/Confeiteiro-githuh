@@ -7,19 +7,11 @@ import modelos.Insumo;
 public class InsumoApresentacao {
 
 	public static void cadastraInsumo(Insumo insumo, String options[]) {
-		insumo.setNome(JOptionPane.showInputDialog("Digite o nome do Insumo:"));
-		int tipoMedida = JOptionPane.showOptionDialog(null,
-				"Informe a Unidade de medida : ", "Insumo", 0, -1, null,options, null);
-		if (tipoMedida == 0) {
-			insumo.setUnidadeMedida ("Kg");
-			
-		} else  {
-			insumo.setUnidadeMedida ("Litro");
-		
-		} 
-		if (tipoMedida == JOptionPane.CLOSED_OPTION) {
-			System.exit(0);
-		}
+		insumo.setNome(JOptionPane.showInputDialog("Digite o nome do Insumo:"));		
+		Object selectedValue = JOptionPane.showInputDialog(null,
+		"Escolha um item", "Opçao",	JOptionPane.INFORMATION_MESSAGE, null,	options, options [0]); 	
+		String valor = (String) selectedValue;
+		insumo.setUnidadeMedida (valor);
 		insumo.setValor(Double.parseDouble((JOptionPane.showInputDialog("Digite o Valor:"))));
 	}
 

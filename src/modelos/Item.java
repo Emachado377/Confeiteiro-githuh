@@ -3,14 +3,14 @@ package modelos;
 import modelos.Insumo;
 import modelos.Produto;
 
-public class Ingrediente {
+public class Item {
 	 private Produto produto;	 
 	 private Insumo insumo;
 	 private Double quantidadeProduto;
 	 private Double quantidadeInsumo;
 	 
 	 
-	public Ingrediente(Produto produto, Insumo insumo,Double quantidadeReceita, Double quantidadeInsumo) {
+	public Item(Produto produto, Insumo insumo,Double quantidadeReceita, Double quantidadeInsumo) {
 		this.produto = produto;
 		this.insumo = insumo;
 		this.quantidadeProduto = quantidadeProduto;

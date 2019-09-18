@@ -7,6 +7,7 @@ public class SAControle {
 	SAApresentacao saApresentacao = new SAApresentacao();
 	
 	public SAControle() {
+		popula();
 		int opcao = 4;
 		do {
 			opcao = saApresentacao.menuPrincipal();
@@ -33,5 +34,18 @@ public class SAControle {
 		if (opcao == 2) {
 			InsumoControle.listaInsumo();
 		}
+	}
+	
+	
+	
+	public void popula() {
+		populaInsumos();	
+	}
+	
+	public void populaInsumos() {		
+	InsumoControle.populaInsumos("Farinha", "Kg", 12.00);
+	InsumoControle.populaInsumos("Ovos", "Duzia", 10.00);		
+	InsumoControle.populaInsumos("Leite", "Litro", 4.00);
+	InsumoControle.populaInsumos("Açucar", "Kg", 8.00);
 	}
 }

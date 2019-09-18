@@ -8,7 +8,7 @@ import modelos.Insumo;
 public class InsumoControle {
 	
 	public static ArrayList<Insumo> listaInsumos = new ArrayList<Insumo>();
-    public static  String[] options = { "Kg", "Litro"};
+    public static  String[] options = { "kg","grama", "litro","ml", "duzia", "metro","centimetro", "milimetro"};
     
 	
 	public static void adicionaInsumo () {
@@ -26,5 +26,13 @@ public class InsumoControle {
 		InsumoApresentacao.listaInsumo(listaNomeInsumoTemporaria);
 	}
 	
+			
+		
+	public static void populaInsumos(String nome, String unidadeMedida, Double valor) {
+		Insumo insumo = new Insumo();
+		insumo.setNome(nome);
+		insumo.setUnidadeMedida(unidadeMedida);
+		insumo.setValor(valor);
+		listaInsumos.add(insumo);
+	}
 }
-
