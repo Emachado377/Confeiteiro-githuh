@@ -1,30 +1,20 @@
 package modelos;
 
+import modelos.Insumo;
 import modelos.Produto;
-import modelos.Receita;
 
 public class Ingrediente {
-	 private Receita receita;	 
-	 private Produto produto;
-	 private Double quantidadeReceita;
+	 private Produto produto;	 
+	 private Insumo insumo;
 	 private Double quantidadeProduto;
+	 private Double quantidadeInsumo;
 	 
 	 
-	public Ingrediente(Receita receita, Produto produto,Double quantidadeReceita, Double quantidadeProduto) {
-		this.receita = receita;
+	public Ingrediente(Produto produto, Insumo insumo,Double quantidadeReceita, Double quantidadeInsumo) {
 		this.produto = produto;
-		this.quantidadeProduto = quantidadeReceita;
+		this.insumo = insumo;
 		this.quantidadeProduto = quantidadeProduto;
-	}
-
-
-	public Receita getReceita() {
-		return receita;
-	}
-
-
-	public void setReceita(Receita receita) {
-		this.receita = receita;
+		this.quantidadeInsumo = quantidadeInsumo;
 	}
 
 
@@ -38,13 +28,13 @@ public class Ingrediente {
 	}
 
 
-	public Double getQuantidadeReceita() {
-		return quantidadeReceita;
+	public Insumo getInsumo() {
+		return insumo;
 	}
 
 
-	public void setQuantidadeReceita(Double quantidadeReceita) {
-		this.quantidadeReceita = quantidadeReceita;
+	public void setInsumo(Insumo insumo) {
+		this.insumo = insumo;
 	}
 
 
@@ -55,6 +45,16 @@ public class Ingrediente {
 
 	public void setQuantidadeProduto(Double quantidadeProduto) {
 		this.quantidadeProduto = quantidadeProduto;
+	}
+
+
+	public Double getQuantidadeInsumo() {
+		return quantidadeInsumo;
+	}
+
+
+	public void setQuantidadeInsumo(Double quantidadeInsumo) {
+		this.quantidadeInsumo = quantidadeInsumo;
 	}
 	
 }

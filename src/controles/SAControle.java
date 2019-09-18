@@ -11,7 +11,7 @@ public class SAControle {
 		do {
 			opcao = saApresentacao.menuPrincipal();
 			if (opcao == 1) {
-				menuProduto(saApresentacao.menuProduto());
+				menuInsumo(saApresentacao.menuInsumo());
 			}
 			if (opcao == 2) {
 				//menuDisciplina(saApresentacao.menuReceita());
@@ -26,12 +26,12 @@ public class SAControle {
 		} while (opcao > 0);
 	}
 	
-	public void menuProduto(int opcao) {
+	public void menuInsumo(int opcao) {
 		if (opcao == 1) {
-			ProdutoControle.adicionaProduto();
+			InsumoControle.adicionaInsumo();
 		}
 		if (opcao == 2) {
-			ProdutoControle.listaProduto();
+			InsumoControle.listaInsumo();
 		}
 	}
 }
