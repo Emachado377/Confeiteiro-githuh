@@ -1,34 +1,34 @@
 package controles;
 
 import java.util.ArrayList;
-
 import apresentacoes.InsumoApresentacao;
 import modelos.Insumo;
 
 public class InsumoControle {
 	
-	public static ArrayList<Insumo> listaInsumos = new ArrayList<Insumo>();
-    public static  String[] options = { "kg","grama", "litro","ml", "duzia", "metro","centimetro", "milimetro"};
+	InsumoApresentacao insumoApresentacao = new InsumoApresentacao();
+	
+	public  ArrayList<Insumo> listaInsumos = new ArrayList<Insumo>();
+    public  String[] options = { "kg","g","mg", "l","ml", "duzia", "m","cm", "mm"};
     
 	
-	public static void adicionaInsumo () {
+	public void adicionaInsumo () {
 		Insumo insumo = new Insumo();
-		InsumoApresentacao.cadastraInsumo(insumo, options);
+		insumoApresentacao.cadastraInsumo(insumo, options);
 		listaInsumos.add(insumo);
 	}
-	public static void listaInsumo(){
+	public void listaInsumo(){
 		String listaNomeInsumoTemporaria = "";
 		int n = listaInsumos.size(); 
 		for(int i =0; i<n; i++){
 			listaNomeInsumoTemporaria+= Integer.toString(i)+ " - " +
 					listaInsumos.get(i).getNome()+"  =  "+ listaInsumos.get(i).getValor() +" /  "+ listaInsumos.get(i).getUnidadeMedida() + "\n\n";
 		}
-		InsumoApresentacao.listaInsumo(listaNomeInsumoTemporaria);
+		insumoApresentacao.listaInsumo(listaNomeInsumoTemporaria);
 	}
-	
 			
 		
-	public static void populaInsumos(String nome, String unidadeMedida, Double valor) {
+	public void populaInsumos(String nome, String unidadeMedida, Double valor) {
 		Insumo insumo = new Insumo();
 		insumo.setNome(nome);
 		insumo.setUnidadeMedida(unidadeMedida);

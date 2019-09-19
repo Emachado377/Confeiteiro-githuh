@@ -1,7 +1,10 @@
 package modelos;
 
 public class Produto {
-	private String nome;	
+	private String nome;
+	
+	public Produto() {
+	}
 	
 	public Produto(String nome) {
 		this.nome = nome;
