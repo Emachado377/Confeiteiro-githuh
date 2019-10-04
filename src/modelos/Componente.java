@@ -3,19 +3,22 @@ package modelos;
 import modelos.Insumo;
 import modelos.Produto;
 
-public class Item {
+public class Componente {
 	 private Produto produto;	 
 	 private Insumo insumo;
 	 private Double quantidadeProduto;
 	 private Double quantidadeInsumo;
 	 private String descricaoPreparo;
 	 
-	public Item(Produto produto, Insumo insumo,Double quantidadeProduto, Double quantidadeInsumo, String descricaoPreparo) {
+	public Componente(Produto produto, Insumo insumo,Double quantidadeProduto, Double quantidadeInsumo, String descricaoPreparo) {
 		this.produto = produto;
 		this.insumo = insumo;
 		this.quantidadeProduto = quantidadeProduto;
 		this.quantidadeInsumo = quantidadeInsumo;
 		this.descricaoPreparo = descricaoPreparo;
+	}
+
+	public Componente() {		
 	}
 
 	public Produto getProduto() {

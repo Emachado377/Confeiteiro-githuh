@@ -9,6 +9,9 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
+	public Cliente() {		
+	}
+
 	public String getNome() {
 		return nome;
 	}

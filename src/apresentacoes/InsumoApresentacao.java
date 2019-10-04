@@ -14,8 +14,10 @@ public class InsumoApresentacao {
 		insumo.setUnidadeMedida (valor);
 		insumo.setValor(Double.parseDouble((JOptionPane.showInputDialog("Digite o Valor:"))));
 	}
-
 	public void listaInsumo(String listaInsumo) {
 		JOptionPane.showMessageDialog(null, listaInsumo);
+	}
+	public int selecionaInsumo(String listaNomeInsumo){
+		return Integer.parseInt(JOptionPane.showInputDialog("Digite o numero do produto:\n\n" + listaNomeInsumo));
 	}
 }
