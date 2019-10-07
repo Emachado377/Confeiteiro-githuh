@@ -1,7 +1,6 @@
 package apresentacoes;
 
 import javax.swing.JOptionPane;
-
 import modelos.Cliente;
 
 public class ClienteApresentacao {
@@ -14,5 +13,9 @@ public class ClienteApresentacao {
 	
 	public void listaCliente(String listaClientes){
 		JOptionPane.showMessageDialog(null, "Lista de Clientes Cadastrados" + "\n\n" + listaClientes);
-	}	
+	}
+	
+	public int selecionaCliente(String listaNomeCliente){
+		return Integer.parseInt(JOptionPane.showInputDialog("Digite o numero do Cliente:\n\n" + listaNomeCliente));
+	}
 }

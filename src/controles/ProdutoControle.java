@@ -16,13 +16,12 @@ public class ProdutoControle {
 		produtoApresentacao.cadastraProduto(produto);
 		listaProdutos.add(produto);
 	}
-	
+
 	public Produto selecionaProduto() {
 		String listaNomeProdutoTemporaria = "";
 		int n = listaProdutos.size();
 		for (int i = 0; i < n; i++) {
-			listaNomeProdutoTemporaria += Integer.toString(i) + " - "
-					+ listaProdutos.get(i).getNome() + "\n";
+			listaNomeProdutoTemporaria += Integer.toString(i) + " - " + listaProdutos.get(i).getNome() + "\n";
 		}
 		int idProduto = produtoApresentacao.selecionaProduto(listaNomeProdutoTemporaria);
 		return listaProdutos.get(idProduto);
@@ -34,17 +33,17 @@ public class ProdutoControle {
 		for (int i = 0; i < n; i++) {
 			listaProdutoTemporaria += Integer.toString(i) + " - " + listaProdutos.get(i).getNome() + "\n";
 		}
-
 		produtoApresentacao.listaProduto(listaProdutoTemporaria);
 	}
-	
+
 	public void populaProduto(String nome) {
 		Produto produto = new Produto();
 		produto.setNome(nome);
 		listaProdutos.add(produto);
 	}
-	public Produto obtemProdutoParaPopular(int idProduto){
+
+	public Produto obtemProdutoParaPopular(int idProduto) {
 		return listaProdutos.get(idProduto);
 	}
-	
+
 }

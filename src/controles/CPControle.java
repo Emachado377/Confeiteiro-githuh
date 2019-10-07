@@ -12,52 +12,79 @@ public class CPControle {
 	InsumoControle insumoControle = new InsumoControle();
 	ProdutoControle produtoControle = new ProdutoControle();
 	ComponenteControle componenteControle = new ComponenteControle();
-	ClienteControle  clienteControle = new ClienteControle();
-	
+	ClienteControle clienteControle = new ClienteControle();
+	PedidoControle pedidoControle = new PedidoControle();
 
-	public CPControle() {
+	public CPControle() throws Exception {
 		popula();
 		int opcao = 4;
 		do {
 			opcao = cpApresentacao.menuPrincipal();
 			if (opcao == 1) {
-				menuInsumo(cpApresentacao.menuInsumo());
+				int opcaomenu = 1;
+				do {
+					opcaomenu = menuInsumo(cpApresentacao.menuInsumo());
+				} while (opcaomenu != 0);
 			}
+
 			if (opcao == 2) {
-				menuProduto(cpApresentacao.menuProduto());
+				int opcaomenu = 1;
+				do {
+					opcaomenu = menuProduto(cpApresentacao.menuProduto());
+				} while (opcaomenu != 0);
 			}
+
 			if (opcao == 3) {
-				menuComponente(cpApresentacao.menuComponente());
+				int opcaomenu = 1;
+				do {
+					opcaomenu = menuComponente(cpApresentacao.menuComponente());
+				} while (opcaomenu != 0);
 			}
+
 			if (opcao == 4) {
-				menuCliente(cpApresentacao.menuCliente());
+				int opcaomenu = 1;
+				do {
+					opcaomenu = menuCliente(cpApresentacao.menuCliente());
+				} while (opcaomenu != 0);
 			}
+
 			if (opcao == 5) {
-				// menuCurso(cpApresentacao.menuPedido());
+				int opcaomenu = 1;
+				do {
+					opcaomenu = menuPedido(cpApresentacao.menuPedido());
+				} while (opcaomenu != 0);
 			}
 
 		} while (opcao > 0);
 	}
 
-	public void menuInsumo(int opcao) {
+	public int menuInsumo(int opcao) {
 		if (opcao == 1) {
 			insumoControle.adicionaInsumo();
 		}
 		if (opcao == 2) {
 			insumoControle.listaInsumo();
 		}
+		if (opcao == 0) {
+			return 0;
+		}
+		return 1;
 	}
 
-	public void menuProduto(int opcao) {
+	public int menuProduto(int opcao) {
 		if (opcao == 1) {
 			produtoControle.adicionaProduto();
 		}
 		if (opcao == 2) {
 			produtoControle.listaProduto();
 		}
+		if (opcao == 0) {
+			return 0;
+		}
+		return 1;
 	}
 
-	public void menuComponente(int opcao) {
+	public int menuComponente(int opcao) {
 		if (opcao == 1) {
 			componenteControle.relacionarProdutoInsumo(produtoControle.selecionaProduto(),
 					insumoControle.selecionaInsumo());
@@ -65,21 +92,45 @@ public class CPControle {
 		if (opcao == 2) {
 			componenteControle.listaComponentePorProduto(produtoControle.selecionaProduto());
 		}
+		if (opcao == 0) {
+			return 0;
+		}
+		return 1;
 	}
-	public void menuCliente(int opcao) {
+
+	public int menuCliente(int opcao) {
 		if (opcao == 1) {
 			clienteControle.adicionaCliente();
 		}
 		if (opcao == 2) {
 			clienteControle.listaCliente();
 		}
+		if (opcao == 0) {
+			return 0;
+		}
+		return 1;
 	}
 
-	public void popula() {
+	public int menuPedido(int opcao) throws Exception {
+
+		if (opcao == 1) {
+			pedidoControle.adicionaPedido(clienteControle.selecionaCliente(), produtoControle.selecionaProduto());
+		}
+		if (opcao == 2) {
+			pedidoControle.listaPedido();
+		}
+		if (opcao == 0) {
+			return 0;
+		}
+		return 1;
+	}
+
+	public void popula() throws Exception {
 		populaInsumos();
 		populaProduto();
 		populaComponente();
 		populaCliente();
+		populaPedido();
 	}
 
 	public void populaInsumos() {
@@ -126,15 +177,15 @@ public class CPControle {
 				insumoControle.obtemInsumoParaPopular(1), 0.5);
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(2),
 				insumoControle.obtemInsumoParaPopular(5), 2.0);
-		
+
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
 				insumoControle.obtemInsumoParaPopular(10), 1.0);
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
 				insumoControle.obtemInsumoParaPopular(1), 0.5);
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
 				insumoControle.obtemInsumoParaPopular(8), 0.3);
-			}
-	
+	}
+
 	public void populaCliente() {
 		clienteControle.populaCliente("Evandro", "981223441");
 		clienteControle.populaCliente("Tiago", "981623661");
@@ -142,5 +193,16 @@ public class CPControle {
 		clienteControle.populaCliente("João", "981229851");
 		clienteControle.populaCliente("Vagner", "981233447");
 		clienteControle.populaCliente("Patricia", "98254645");
-		}
+	}
+
+	public void populaPedido() throws Exception {
+		pedidoControle.populaPedido(clienteControle.obtemClienteParaPopular(0),
+				produtoControle.obtemProdutoParaPopular(0), 2.0, "10/10/2019");
+		pedidoControle.populaPedido(clienteControle.obtemClienteParaPopular(1),
+				produtoControle.obtemProdutoParaPopular(1), 3.0, "01/12/2019");
+		pedidoControle.populaPedido(clienteControle.obtemClienteParaPopular(2),
+				produtoControle.obtemProdutoParaPopular(2), 50.0, "07/01/2020");
+		pedidoControle.populaPedido(clienteControle.obtemClienteParaPopular(3),
+				produtoControle.obtemProdutoParaPopular(3), 30.0, "05/11/2019");
+	}
 }

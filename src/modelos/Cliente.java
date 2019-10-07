@@ -9,7 +9,7 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public Cliente() {		
+	public Cliente() {
 	}
 
 	public String getNome() {
@@ -28,7 +28,6 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	
 	public String toString() {
 		return "\nCliente=" + nome + "\nTelefone=" + telefone + "\n";
 	}

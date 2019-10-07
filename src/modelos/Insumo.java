@@ -8,12 +8,12 @@ public class Insumo {
 	public Insumo() {
 	}
 
-	public Insumo (String nome, String unidadeMedida, double valor) {
+	public Insumo(String nome, String unidadeMedida, double valor) {
 		this.nome = nome;
 		this.unidadeMedida = unidadeMedida;
 		this.valor = valor;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -37,12 +37,9 @@ public class Insumo {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	
 
 	public String toString() {
-		return "\nInsumo=" + nome + "\nUnidade de Medida=" + unidadeMedida + "\nValor do Insumo = "
-				+ valor + "\n";
-	}	
-	
-	
+		return "\nInsumo=" + nome + "\nUnidade de Medida=" + unidadeMedida + "\nValor do Insumo = " + valor + "\n";
+	}
+
 }
