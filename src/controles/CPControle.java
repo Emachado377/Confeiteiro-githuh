@@ -144,7 +144,7 @@ public class CPControle {
 		insumoControle.populaInsumos("Achocolatado", "Kg", 8.00);
 		insumoControle.populaInsumos("Sal", "Kg", 8.00);
 		insumoControle.populaInsumos("Guisado de Gado", "Kg", 8.00);
-		insumoControle.populaInsumos("Guisado de Frngo", "Kg", 8.00);
+		insumoControle.populaInsumos("Guisado de Frango", "Kg", 8.00);
 
 	}
 
@@ -158,32 +158,32 @@ public class CPControle {
 
 	public void populaComponente() {
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(0),
-				insumoControle.obtemInsumoParaPopular(2), 0.50);
+				insumoControle.obtemInsumoParaPopular(2), 0.50,"litro");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(0),
-				insumoControle.obtemInsumoParaPopular(3), 2.0);
+				insumoControle.obtemInsumoParaPopular(3), 2.0,"xícara");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(0),
-				insumoControle.obtemInsumoParaPopular(5), 1.5);
+				insumoControle.obtemInsumoParaPopular(5), 1.5,"colher de sopa");
 
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(1),
-				insumoControle.obtemInsumoParaPopular(1), 2.0);
+				insumoControle.obtemInsumoParaPopular(1), 6.0,"unidade");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(1),
-				insumoControle.obtemInsumoParaPopular(4), 1.5);
+				insumoControle.obtemInsumoParaPopular(4), 0.5,"xícara");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(1),
-				insumoControle.obtemInsumoParaPopular(6), 0.5);
+				insumoControle.obtemInsumoParaPopular(6), 3.0,"colher de sopa");
 
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(2),
-				insumoControle.obtemInsumoParaPopular(9), 1.0);
+				insumoControle.obtemInsumoParaPopular(9), 50.0,"grama");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(2),
-				insumoControle.obtemInsumoParaPopular(1), 0.5);
+				insumoControle.obtemInsumoParaPopular(1), 1.0,"unidade");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(2),
-				insumoControle.obtemInsumoParaPopular(5), 2.0);
+				insumoControle.obtemInsumoParaPopular(5), 1.0,"Colher de chá");
 
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
-				insumoControle.obtemInsumoParaPopular(10), 1.0);
+				insumoControle.obtemInsumoParaPopular(10), 50.0,"grama");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
-				insumoControle.obtemInsumoParaPopular(1), 0.5);
+				insumoControle.obtemInsumoParaPopular(1), 1.0,"unidade");
 		componenteControle.populaComponente(produtoControle.obtemProdutoParaPopular(3),
-				insumoControle.obtemInsumoParaPopular(8), 0.3);
+				insumoControle.obtemInsumoParaPopular(8), 0.5,"colher de chá");
 	}
 
 	public void populaCliente() {

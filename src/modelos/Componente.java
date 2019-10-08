@@ -7,12 +7,13 @@ public class Componente {
 	private Produto produto;
 	private Insumo insumo;
 	private Double quantidadeInsumo;
+	private String unidadeMedidaInsumo;
 	
-	public Componente(Produto produto, Insumo insumo,  Double quantidadeInsumo) {
+	public Componente(Produto produto, Insumo insumo,  Double quantidadeInsumo, String unidadeMedidaInsumo) {
 		this.produto = produto;
 		this.insumo = insumo;
 		this.quantidadeInsumo = quantidadeInsumo;
-		
+		this.unidadeMedidaInsumo = unidadeMedidaInsumo;
 	}
 
 	public Componente() {
@@ -40,6 +41,14 @@ public class Componente {
 
 	public void setQuantidadeInsumo(Double quantidadeInsumo) {
 		this.quantidadeInsumo = quantidadeInsumo;
+	}
+	
+	public String getUnidadeMedidaInsumo() {
+		return unidadeMedidaInsumo;
+	}
+
+	public void setUnidadeMedidaInsumo(String unidadeMedidaInsumo) {
+		this.unidadeMedidaInsumo = unidadeMedidaInsumo;
 	}
 
 }

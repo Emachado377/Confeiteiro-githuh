@@ -10,6 +10,8 @@ import modelos.Produto;
 public class ComponenteControle {
 
 	private ArrayList<Componente> listaComponentes = new ArrayList<Componente>();
+	
+	public String[] optionsUnidadeMedidaInsumo = { "xícara", "colher de sopa", "colher de chá", "unidade", "kg", "quilo", "miligramas", "litro","mililitros", "metros", "milimetros" };
 
 	private ComponenteApresentacao componenteApresentacao = new ComponenteApresentacao();
 
@@ -17,13 +19,12 @@ public class ComponenteControle {
 		Componente componente = new Componente();
 		componente.setProduto(produto);
 		componente.setInsumo(insumo);
-		componenteApresentacao.adicionaComponente(componente);
+		componenteApresentacao.adicionaComponente(componente,optionsUnidadeMedidaInsumo);
 		listaComponentes.add(componente);
 	}
 
 	public void listaComponentePorProduto(Produto produto) {
 		String listaComponenteTemporaria = "";
-
 		int n = listaComponentes.size();
 
 		for (int i = 0; i < n; i++) {
@@ -32,17 +33,19 @@ public class ComponenteControle {
 				listaComponenteTemporaria += Integer.toString(i) + "-" + listaComponentes.get(i).getProduto().getNome()
 						+ ":" + "\n" + "     - " + listaComponentes.get(i).getInsumo().getNome() + " = "
 						+ listaComponentes.get(i).getQuantidadeInsumo() + " "
-						+ listaComponentes.get(i).getInsumo().getUnidadeMedida() + "\n";
+						+ listaComponentes.get(i).getUnidadeMedidaInsumo() + "\n";
 			}
 		}
 		componenteApresentacao.listaComponente(listaComponenteTemporaria);
 	}
 
-	public void populaComponente(Produto produto, Insumo insumo, double qtdInsumo) {
+	public void populaComponente(Produto produto, Insumo insumo, double qtdInsumo, String unidadeMedidaInsumo ) {
 		Componente componente = new Componente();
 		componente.setProduto(produto);
 		componente.setInsumo(insumo);
 		componente.setQuantidadeInsumo(qtdInsumo);
+		componente.setUnidadeMedidaInsumo(unidadeMedidaInsumo);
+		
 		listaComponentes.add(componente);
 	}
 }

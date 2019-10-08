@@ -11,7 +11,7 @@ public class ProdutoApresentacao {
 				JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		String valor = (String) selectedValue;
 		produto.setUnidade(valor);
-		}
+	}
 
 	public void listaProduto(String listaProduto) {
 		JOptionPane.showMessageDialog(null, "Lista de Produtos Cadastrados" + "\n\n" + listaProduto);
