@@ -149,10 +149,10 @@ public class CPControle {
 	}
 
 	public void populaProduto() {
-		produtoControle.populaProduto("Bolo Simples");
-		produtoControle.populaProduto("Bolo simples de coco com cobertura de chocolate");
-		produtoControle.populaProduto("Pastel de Carne");
-		produtoControle.populaProduto("Pastel de Frango");
+		produtoControle.populaProduto("Bolo Simples","Quilo",100);
+		produtoControle.populaProduto("Bolo simples de coco com cobertura de chocolate","Quilo",100);
+		produtoControle.populaProduto("Pastel de Carne","Unidade",100);
+		produtoControle.populaProduto("Pastel de Frango","Unidade",100);
 
 	}
 

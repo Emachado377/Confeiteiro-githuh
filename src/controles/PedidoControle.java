@@ -30,7 +30,7 @@ public class PedidoControle {
 		for (int i = 0; i < n; i++) {
 			listaPedidoTemporaria += Integer.toString(i) + " Cliente: " + listaPedidos.get(i).getCliente().getNome()
 					+ "\n" + " Produto: " + listaPedidos.get(i).getProduto().getNome() + " \n " + " Quantidade: "
-					+ listaPedidos.get(i).getQuantidadeProduto() + "\n" + " Data de Entrega: "
+					+ listaPedidos.get(i).getQuantidadeProduto() + " " + listaPedidos.get(i).getProduto().getUnidade() + "\n"  + " Data de Entrega: "
 					+ formato.format(listaPedidos.get(i).getDataDeEntrega()) + "\n ------------------------\n";
 
 		}

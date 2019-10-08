@@ -20,7 +20,7 @@ public class ClienteControle {
 		String listaClienteTemporaria = "";
 		int n = listaClientes.size();
 		for (int i = 0; i < n; i++) {
-			listaClienteTemporaria += Integer.toString(i) + " - " + listaClientes.get(i).getNome() + "\nTelfone: "
+			listaClienteTemporaria += Integer.toString(i) + " - " + listaClientes.get(i).getNome() + "\nTelefone: "
 					+ listaClientes.get(i).getTelefone() + "\n";
 		}
 

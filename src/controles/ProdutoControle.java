@@ -8,12 +8,14 @@ import modelos.Produto;
 public class ProdutoControle {
 
 	private ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
-
+	
+	public String[] options = { "Peça", "Unidade", "Quilo", "Litro" };
+	
 	private ProdutoApresentacao produtoApresentacao = new ProdutoApresentacao();
 
 	public void adicionaProduto() {
 		Produto produto = new Produto();
-		produtoApresentacao.cadastraProduto(produto);
+		produtoApresentacao.cadastraProduto(produto, options);
 		listaProdutos.add(produto);
 	}
 
@@ -36,9 +38,11 @@ public class ProdutoControle {
 		produtoApresentacao.listaProduto(listaProdutoTemporaria);
 	}
 
-	public void populaProduto(String nome) {
+	public void populaProduto(String nome, String unidade,int valorServico) {
 		Produto produto = new Produto();
 		produto.setNome(nome);
+		produto.setUnidade(unidade);
+		produto.setValorServico(valorServico);
 		listaProdutos.add(produto);
 	}
 

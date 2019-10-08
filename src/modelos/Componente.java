@@ -6,17 +6,13 @@ import modelos.Produto;
 public class Componente {
 	private Produto produto;
 	private Insumo insumo;
-	private Double quantidadeProduto;
 	private Double quantidadeInsumo;
-	private String descricaoPreparo;
-
-	public Componente(Produto produto, Insumo insumo, Double quantidadeProduto, Double quantidadeInsumo,
-			String descricaoPreparo) {
+	
+	public Componente(Produto produto, Insumo insumo,  Double quantidadeInsumo) {
 		this.produto = produto;
 		this.insumo = insumo;
-		this.quantidadeProduto = quantidadeProduto;
 		this.quantidadeInsumo = quantidadeInsumo;
-		this.descricaoPreparo = descricaoPreparo;
+		
 	}
 
 	public Componente() {
@@ -38,14 +34,6 @@ public class Componente {
 		this.insumo = insumo;
 	}
 
-	public Double getQuantidadeProduto() {
-		return quantidadeProduto;
-	}
-
-	public void setQuantidadeProduto(Double quantidadeProduto) {
-		this.quantidadeProduto = quantidadeProduto;
-	}
-
 	public Double getQuantidadeInsumo() {
 		return quantidadeInsumo;
 	}
@@ -54,11 +42,4 @@ public class Componente {
 		this.quantidadeInsumo = quantidadeInsumo;
 	}
 
-	public String getDescricaoPreparo() {
-		return descricaoPreparo;
-	}
-
-	public void setDescricaoPreparo(String descricaoPreparo) {
-		this.descricaoPreparo = descricaoPreparo;
-	}
 }

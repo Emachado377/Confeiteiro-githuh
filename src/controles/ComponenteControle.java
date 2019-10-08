@@ -15,27 +15,22 @@ public class ComponenteControle {
 
 	public void relacionarProdutoInsumo(Produto produto, Insumo insumo) {
 		Componente componente = new Componente();
-		componenteApresentacao.adicionaComponente(componente);
 		componente.setProduto(produto);
 		componente.setInsumo(insumo);
+		componenteApresentacao.adicionaComponente(componente);
 		listaComponentes.add(componente);
 	}
 
 	public void listaComponentePorProduto(Produto produto) {
 		String listaComponenteTemporaria = "";
-		int conta = 1;
+
 		int n = listaComponentes.size();
 
 		for (int i = 0; i < n; i++) {
-			if ((listaComponentes.get(i).getProduto().getNome().equals(produto.getNome())) && conta == 0) {
-				listaComponenteTemporaria += Integer.toString(i) + " - " + listaComponentes.get(i).getInsumo().getNome()
-						+ " = " + listaComponentes.get(i).getQuantidadeInsumo() + " "
-						+ listaComponentes.get(i).getInsumo().getUnidadeMedida() + "\n";
+			if ((listaComponentes.get(i).getProduto().getNome().equals(produto.getNome()))) {
 
-			} else if ((listaComponentes.get(i).getProduto().getNome().equals(produto.getNome())) && conta == 1) {
-				conta = 0;
 				listaComponenteTemporaria += Integer.toString(i) + "-" + listaComponentes.get(i).getProduto().getNome()
-						+ ":" + "\n" + "- " + listaComponentes.get(i).getInsumo().getNome() + " = "
+						+ ":" + "\n" + "     - " + listaComponentes.get(i).getInsumo().getNome() + " = "
 						+ listaComponentes.get(i).getQuantidadeInsumo() + " "
 						+ listaComponentes.get(i).getInsumo().getUnidadeMedida() + "\n";
 			}
@@ -50,5 +45,4 @@ public class ComponenteControle {
 		componente.setQuantidadeInsumo(qtdInsumo);
 		listaComponentes.add(componente);
 	}
-
 }

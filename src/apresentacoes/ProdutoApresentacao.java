@@ -5,10 +5,13 @@ import modelos.Produto;
 
 public class ProdutoApresentacao {
 
-	public void cadastraProduto(Produto produto) {
+	public void cadastraProduto(Produto produto, String options[]) {
 		produto.setNome(JOptionPane.showInputDialog("Cadastre um Produto:"));
-
-	}
+		Object selectedValue = JOptionPane.showInputDialog(null, "Selecione uma unidade para o produto:", "Opçao",
+				JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		String valor = (String) selectedValue;
+		produto.setUnidade(valor);
+		}
 
 	public void listaProduto(String listaProduto) {
 		JOptionPane.showMessageDialog(null, "Lista de Produtos Cadastrados" + "\n\n" + listaProduto);

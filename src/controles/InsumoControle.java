@@ -9,7 +9,8 @@ public class InsumoControle {
 	InsumoApresentacao insumoApresentacao = new InsumoApresentacao();
 
 	public ArrayList<Insumo> listaInsumos = new ArrayList<Insumo>();
-	public String[] options = { "kg", "g", "mg", "l", "ml", "duzia", "m", "cm", "mm" };
+
+	public String[] options = { "kg", "g", "mg", "l", "ml", "m", "mm" };
 
 	public void adicionaInsumo() {
 		Insumo insumo = new Insumo();
